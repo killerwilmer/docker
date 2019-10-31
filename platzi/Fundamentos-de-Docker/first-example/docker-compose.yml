@@ -4,11 +4,11 @@ services:
   app:
     image: platziapp
     environment:
-      MONGO_URL: "mongodb://db:27017/test"
+      MONGO_URL: "mongodb://mongoserver:27017/test"
     depends_on:
-      - db
+      - mongoserver
     ports:
       - "3000:3000"
 
-  db:
+  mongoserver:
     image: mongo
